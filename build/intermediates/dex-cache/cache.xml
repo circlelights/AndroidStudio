@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/JasonAtPBWT/AndroidStudioProjects/Sunshine2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.0"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/JasonAtPBWT/AndroidStudioProjects/Sunshine2/app/build/intermediates/pre-dexed/debug/classes-e0fec0fffa23a9b8f175abd47acb329fde6a062b.jar" />
-    </item>
-    <item
-        jar="/Users/JasonAtPBWT/Documents/eclipse/android-sdks/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="/Users/Dev11/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.0"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/JasonAtPBWT/AndroidStudioProjects/Sunshine2/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-f7e0d1f731c477dc1a0444d3949cde5b2d48aa54.jar" />
+        <dex dex="/Users/Dev11/Documents/AndroidStudioUDAC/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-21ec7d2e7cd471198a668ea0eef5b6a35ec512b3.jar" />
     </item>
     <item
-        jar="/Users/JasonAtPBWT/AndroidStudioProjects/Sunshine2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/Users/Dev11/Documents/AndroidStudioUDAC/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/Dev11/Documents/AndroidStudioUDAC/app/build/intermediates/pre-dexed/debug/classes-30e893b5c5b15bd2618f8a54671a977c32e0a948.jar" />
+    </item>
+    <item
+        jar="/Users/Dev11/Documents/AndroidStudioUDAC/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.0"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/JasonAtPBWT/AndroidStudioProjects/Sunshine2/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-0137b0652452bac7a4de7cd50ca38620752dee79.jar" />
+        <dex dex="/Users/Dev11/Documents/AndroidStudioUDAC/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-ceed372b069cc4ddb2f62144eda264aa60477b36.jar" />
     </item>
     <item
-        jar="/Users/JasonAtPBWT/AndroidStudioProjects/Sunshine2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jar="/Users/Dev11/Documents/AndroidStudioUDAC/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.0"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/JasonAtPBWT/AndroidStudioProjects/Sunshine2/app/build/intermediates/pre-dexed/debug/classes-b7fc138a8ec6b76a56b494b71494bc0988557935.jar" />
+        <dex dex="/Users/Dev11/Documents/AndroidStudioUDAC/app/build/intermediates/pre-dexed/debug/classes-bb4512d040890f2524d9789e872f4b76194e9dcd.jar" />
     </item>
 
 </items>
