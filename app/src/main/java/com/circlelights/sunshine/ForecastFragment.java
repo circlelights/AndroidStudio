@@ -61,11 +61,7 @@ public class ForecastFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item)  {
         int id = item.getItemId();
         if (id == R.id.action_refresh) {
-            FetchWeatherTask weatherTask = new FetchWeatherTask();
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            String location = prefs.getString(getString(R.string.pref_location_key),
-                    getString(R.string.pref_location_default));
-            weatherTask.execute(location);
+            updateWeather();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -74,24 +70,23 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
-        ArrayList<String> Weather = new ArrayList<String>();
-        Weather.add("Today - Sunny - 88/63");
-        Weather.add("Tomorrow - Foggy - 70/46");
-        Weather.add("Weds - Cloudy - 72/63");
-        Weather.add("Thurs - Rainy - 64/51");
-        Weather.add("Fri - Foggy - 70/46");
-        Weather.add("Sat - Sunny - 76/68");
+//
+//        ArrayList<String> Weather = new ArrayList<String>();
+//        Weather.add("Today - Sunny - 88/63");
+//        Weather.add("Tomorrow - Foggy - 70/46");
+//        Weather.add("Weds - Cloudy - 72/63");
+//        Weather.add("Thurs - Rainy - 64/51");
+//        Weather.add("Fri - Foggy - 70/46");
+//        Weather.add("Sat - Sunny - 76/68");
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 //                R.layout.list_item_forecast, R.id.list_item_forecast_textview, Weather);
 
         mForecastAdapter = new ArrayAdapter<String>(getActivity(),
-                R.layout.list_item_forecast, R.id.list_item_forecast_textview, Weather);
+                R.layout.list_item_forecast, R.id.list_item_forecast_textview,
+                new ArrayList<String>());
 
-
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
 
         ListView myListView = (ListView) rootView.findViewById(R.id.listView_forecast);
@@ -108,6 +103,20 @@ public class ForecastFragment extends Fragment {
         });
         return rootView;
     }
+
+            private void updateWeather() {
+                FetchWeatherTask weatherTask = new FetchWeatherTask();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                String location = prefs.getString(getString(R.string.pref_location_key),
+                        getString(R.string.pref_location_default));
+                weatherTask.execute(location);
+            }
+    @Override
+    public void onStart() {
+        super.onStart();
+        updateWeather();
+    }
+
 
 
 
@@ -139,6 +148,28 @@ public class ForecastFragment extends Fragment {
 
             String highLowStr = roundedHigh + "/" + roundedLow;
             return highLowStr;
+        }
+
+        private String formatTemperature(double met, double imperial)  {
+
+            SharedPreferences prefs =
+                    PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String temp = prefs.getString(
+                    getString(R.string.pref_units_key),
+                    getString(R.string.pref_units_metric));
+
+            if (temp.equals(getString(R.string.pref_units_imperial))) {
+                met = (met * 1.8) + 32;
+                imperial = (imperial * 1.8) + 32;
+            } else if (!temp.equals(getString(R.string.pref_units_metric))) {
+                Log.d(LOG_TAG, "Unit type not found: " + prefs);
+            }
+
+            long roundedMet = Math.round(met);
+            long roundedImperial = Math.round(imperial);
+
+            String result = roundedMet + "/" + roundedImperial;
+            return result;
         }
 
         /**
